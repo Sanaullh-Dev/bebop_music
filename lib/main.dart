@@ -1,6 +1,7 @@
 import 'package:bebop_music/pages/home/home_page.dart';
-import 'package:bebop_music/utils/app_thems.dart';
+import 'package:bebop_music/pages/libary/libary.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,14 +13,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Sen'
+    return ScreenUtilInit(
+      designSize: const Size(1080, 2280),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(fontFamily: 'Sen'),
+        home: const SafeArea(child: LibraryScreen()),
       ),
-      home: const HomePage(),
     );
   }
 }
-
