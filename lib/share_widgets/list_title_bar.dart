@@ -7,9 +7,14 @@ class ListTitleBar extends StatelessWidget {
   final String titleName;
   final bool moreBtn;
   final VoidCallback onPress;
-
+  final IconData? icon;
   const ListTitleBar(
-      {super.key, required this.titleName, required this.onPress, required this.moreBtn});
+      {super.key,
+      required this.titleName,
+      required this.onPress,
+      required this.moreBtn,
+      this.icon
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +27,9 @@ class ListTitleBar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(titleName, style: heading2Bold),
-            Visibility(
-              visible: moreBtn,
-              child: Icon(Icons.arrow_forward_ios, size: 50.sp, color: textColor,))
+            moreBtn
+                ? Icon(icon, size: 50.sp, color: textColor)
+                : const SizedBox()
           ],
         ),
       ),

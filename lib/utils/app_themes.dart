@@ -13,9 +13,9 @@ TextStyle heading1Bold = heading1.copyWith(fontWeight: FontWeight.w700);
 TextStyle heading2 = TextStyle(
   color: textColor,
   fontWeight: FontWeight.w500,
-  fontSize: 45.sp,
-  fontFamily: "Sen",
-  // letterSpacing: 1.5
+  fontSize: 48.sp,
+  fontFamily: "OpenSans",
+  letterSpacing: 1.1
 );
 
 TextStyle heading2Bold = heading2.copyWith(fontWeight: FontWeight.w700);
@@ -30,7 +30,7 @@ TextStyle heading3Bold = heading3.copyWith(fontWeight: FontWeight.w700);
 
 TextStyle tileTitle = TextStyle(
     color: textColor,
-    fontSize: 40.sp,
+    fontSize: 44.sp,
     fontWeight: FontWeight.w600,
     fontFamily: "Sen");
 
@@ -38,7 +38,7 @@ TextStyle tileTitleBold = tileTitle.copyWith(fontWeight: FontWeight.w700);
 
 TextStyle tileSubTitle = TextStyle(
   color: textLightColor,
-  fontSize: 32.sp,
+  fontSize: 38.sp,
   fontFamily: "Sen",
   // overflow: TextOverflow.clip
 );
@@ -51,6 +51,6 @@ TextStyle body =
 TextStyle bodyStrong = body.copyWith(fontWeight: FontWeight.w700);
 
 Widget verticalMainSpace() => SizedBox(height: 35.h);
-Widget verticalSubSpace() => SizedBox(height: 25.h);
-Widget horizontalMainSpace() => SizedBox(height: 15.w);
-Widget horizontalSubSpace() => SizedBox(height: 7.w);
+Widget verticalSubSpace() => SizedBox(height: 15.h);
+Widget horizontalMainSpace() => SizedBox(width: 35.w);
+Widget horizontalSubSpace() => SizedBox(width: 20.w);

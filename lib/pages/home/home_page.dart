@@ -55,7 +55,11 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 itemCount: 4,
                 itemBuilder: (BuildContext context, int index) {
-                  return const SongTile(trailingWidget: SizedBox());
+                  return const SongTile(
+                      icon: FontAwesomeIcons.music,
+                      title: "Doobey",
+                      subTitle: "Album Name - Artists",
+                      trailingWidget: SizedBox());
                 },
               ),
               verticalMainSpace(),
@@ -83,20 +87,20 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 itemCount: 3,
                 itemBuilder: (BuildContext context, int index) {
-                  return const SongTile(trailingWidget: SizedBox());
+                  return const SongTile(
+                    icon: FontAwesomeIcons.music,
+                      title: "Doobey",
+                      subTitle: "Album Name - Artists",
+                      trailingWidget: SizedBox());
                 },
               ),
-
             ],
           ),
         ),
       ),
     );
   }
-
- }
-
-
+}
 
 Widget actionButton(
         {required String name,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 Color primaryColor = const Color.fromRGBO(204, 32, 141, 1);
+Color popPrimaryColor = Color.fromARGB(255, 253, 2, 161);
 Color primaryLightColor = const Color.fromRGBO(204, 32, 141, 0.1);
 Color secondaryColor = const Color.fromRGBO(103, 19, 220, 1);
 Color secondaryLightColor = Color.fromRGBO(136, 85, 208, 0.5);
