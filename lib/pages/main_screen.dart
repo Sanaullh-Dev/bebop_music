@@ -26,36 +26,31 @@ class _MainScreenState extends State<MainScreen> {
           currentIndex: pageIndex,
           type: BottomNavigationBarType.fixed,
           backgroundColor: backgroundColor,
-          fixedColor: primaryColor,
           selectedLabelStyle: menuTextSelected,
-          unselectedLabelStyle: menuTextSelected.copyWith(color: Colors.red),
+          selectedItemColor: primaryColor,
+          unselectedItemColor: textLightColor,
+          unselectedLabelStyle: menuText,
           onTap: (index) => setState(() {
                 pageIndex = index;
               }),
           items: [
-            BottomNavigationBarItem(
-                icon:
-                    Icon(Icons.home_filled, color: textLightColor, size: 60.sp),
-                activeIcon:
-                    Icon(Icons.home_filled, color: primaryColor, size: 60.sp),
-                label: "Home",
-                backgroundColor: Colors.red),
-            BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.music,
-                    color: textLightColor, size: 60.sp),
-                activeIcon: Icon(FontAwesomeIcons.music,
-                    color: primaryColor, size: 60.sp),
-                label: "My Music"),
-            BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.film,
-                    color: textLightColor, size: 60.sp),
-                activeIcon: Icon(FontAwesomeIcons.film,
-                    color: primaryColor, size: 60.sp),
-                label: "Video"),
-            BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.user, color: textLightColor),
-                label: "Setting"),
+            iconItem(label: "Home", icon: FontAwesomeIcons.house),
+            iconItem(label: "My Music", icon: FontAwesomeIcons.music),
+            iconItem(label: "Video", icon: FontAwesomeIcons.film),
+            iconItem(label: "Setting", icon: FontAwesomeIcons.user),
           ]),
     );
   }
+
+  iconItem({required String label, required IconData icon}) =>
+      BottomNavigationBarItem(
+          icon: Padding(
+            padding: EdgeInsets.symmetric(vertical: 15.sp),
+            child: Icon(icon, color: textLightColor, size: 60.sp),
+          ),
+          activeIcon: Padding(
+            padding: EdgeInsets.symmetric(vertical: 15.sp),
+            child: Icon(icon, color: primaryColor, size: 60.sp),
+          ),
+          label: label);
 }

@@ -1,6 +1,5 @@
 import 'package:bebop_music/share_widgets/category_tile.dart';
 import 'package:bebop_music/share_widgets/list_title_bar.dart';
-import 'package:bebop_music/share_widgets/songTile.dart';
 import 'package:bebop_music/utils/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

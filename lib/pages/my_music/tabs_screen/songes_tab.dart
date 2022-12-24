@@ -53,7 +53,7 @@ class SongsTab extends StatelessWidget {
           style: heading3.copyWith(color: textLightColor),
         ),
         const Spacer(),
-        custom_IconBtn(onPress: () {}, icon: FontAwesomeIcons.shuffle),
+        customIconBtn(onPress: () {}, icon: FontAwesomeIcons.shuffle),
         horizontalSubSpace(),
         IconButton(
             onPressed: () {},
@@ -62,12 +62,12 @@ class SongsTab extends StatelessWidget {
                 height: 70.sp,
                 child: Image.asset("assets/icons/sort_icon.png"))),
         horizontalSubSpace(),
-        custom_IconBtn(onPress: () {}, icon: FontAwesomeIcons.listCheck),
+        customIconBtn(onPress: () {}, icon: FontAwesomeIcons.listCheck),
       ],
     );
   }
 
-  Widget custom_IconBtn(
+  Widget customIconBtn(
           {required VoidCallback onPress, required IconData icon}) =>
       IconButton(
           onPressed: onPress, icon: Icon(icon, color: textColor, size: 60.sp));
