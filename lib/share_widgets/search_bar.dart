@@ -9,21 +9,31 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Container(
-      // width: double.infinity,
+      width: size.width * 0.9,
       decoration: BoxDecoration(
           color: secondaryLightColor,
           borderRadius: BorderRadius.circular(60.r)),
       // height: 20,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 30.w),
+        padding: EdgeInsets.symmetric(vertical: 30.h),
         child: Row(
           children: [
+            horizontalMainSpace(),
             Icon(FontAwesomeIcons.magnifyingGlass,
                 size: 50.sp, color: textLightColor),
             SizedBox(width: 25.w),
-            Text("Search Songs and Album ...",
-                style: heading2.copyWith(color: textLightColor)),
+            SizedBox(
+              width: size.width * 0.6,
+              child: Text("Search Songs and Album adasd dsasdasd ",
+                  style: heading2.copyWith(
+                      color: textLightColor,
+                      height: 1,
+                      overflow: TextOverflow.ellipsis)),
+            ),
+            
           ],
         ),
       ),

@@ -80,7 +80,7 @@ class PlaylistCardMax extends StatelessWidget {
       children: [
         Container(
           width: size,
-          height: 550.sp,
+          height: size,
           margin: EdgeInsets.symmetric(vertical: 20.w, horizontal: 20.w),
           decoration: BoxDecoration(
               color: primaryLightColor,
@@ -102,7 +102,9 @@ class PlaylistCardMax extends StatelessWidget {
                 SizedBox(
                   width: size,
                   height: size,
-                  child: Image.asset('assets/logo.png', fit: BoxFit.fitHeight),
+                  // child: Image.asset('assets/images/default_img.jpg',
+                  child: Image.asset('assets/images/album.jpg',
+                      fit: BoxFit.fitHeight),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
@@ -114,28 +116,34 @@ class PlaylistCardMax extends StatelessWidget {
                             end: Alignment.bottomCenter,
                             colors: [
                           Colors.transparent,
-                          Colors.black54,
+                          Colors.black87,
                         ])),
                     padding:
                         EdgeInsets.symmetric(vertical: 5.sp, horizontal: 30.sp),
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        horizontalSubSpace(),
-                        SizedBox(
-                          width: size * 0.6,
-                          child: Text(cardDesc,
-                              // "play list name",
-                              style: heading2.copyWith(
-                                  fontSize: 40.sp,
-                                  color: textColor,
-                                  fontWeight: FontWeight.w600)),
-                        ),
-                        const Spacer(),
-                        PlayButton(
-                            bgColor: textColor, onPress: () {}, btnSize: 80.sp),
-                        horizontalSubSpace(),
-                      ],
+                    child: SizedBox(
+                      width: size * 0.9,
+                      child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(
+                            width: size * 0.6,
+                            child: Text(cardDesc,
+                                // "play list name",
+                                maxLines: 2,
+                                style: heading2.copyWith(
+                                    fontSize: 40.sp,
+                                    overflow: TextOverflow.ellipsis,
+                                    height: 1.2,
+                                    color: textColor,
+                                    fontWeight: FontWeight.w600)),
+                          ),
+                          const Spacer(),
+                          PlayButton(
+                              bgColor: textColor,
+                              onPress: () {},
+                              btnSize: 80.sp),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -150,8 +158,9 @@ class PlaylistCardMax extends StatelessWidget {
             children: [
               Text(titleName,
                   // "Artists Name with full details",
+                  maxLines: 2,
                   style: tileTitle.copyWith(
-                      overflow: TextOverflow.ellipsis, height: 2.sp)),
+                      overflow: TextOverflow.ellipsis, height: 1.2)),
               verticalSubSpace(),
               subTitleName.isNotEmpty
                   ? Text(subTitleName, style: tileSubTitle)

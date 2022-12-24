@@ -1,4 +1,5 @@
 import 'package:bebop_music/pages/home/home_page.dart';
+import 'package:bebop_music/pages/main_screen.dart';
 import 'package:bebop_music/pages/my_music/my_music.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Sen'),
-        home: const SafeArea(child: MyMusicScreen()),
+        home: const SafeArea(child: MainScreen()),
         // home: const SafeArea(child: HomePage()),
       ),
     );

@@ -28,6 +28,13 @@ TextStyle heading3 = TextStyle(
 
 TextStyle heading3Bold = heading3.copyWith(fontWeight: FontWeight.w700);
 
+TextStyle menuText = TextStyle(
+    fontSize: 44.sp,
+    fontWeight: FontWeight.w600,
+    fontFamily: "Sen");
+
+TextStyle menuTextSelected = menuText.copyWith(fontWeight: FontWeight.w700);
+
 TextStyle tileTitle = TextStyle(
     color: textColor,
     fontSize: 44.sp,
