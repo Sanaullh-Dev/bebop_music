@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.6.0
+  flutter_staggered_grid_view: ^0.6.2
   font_awesome_flutter: ^10.3.0
 
 dev_dependencies:
@@ -69,13 +70,13 @@ flutter:
         - asset: fonts/Sen/Sen-Regular.ttf
         - asset: fonts/Sen/Sen-Bold.ttf
         - asset: fonts/Sen/Sen-ExtraBold.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+    #       - asset: fonts/Schyler-Italic.ttf
+    #         style: italic
     - family: OpenSans
       fonts:
         - asset: fonts/OpenSans/OpenSans-Regular.ttf
         - asset: fonts/OpenSans/OpenSans-Light.ttf
-        - asset: fonts/OpenSans/OpenSans-Bold.ttf        
+        - asset: fonts/OpenSans/OpenSans-Bold.ttf
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,

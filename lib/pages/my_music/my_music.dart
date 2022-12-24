@@ -1,6 +1,8 @@
-import 'package:bebop_music/pages/libary/tabs_screen/folder_tab.dart';
-import 'package:bebop_music/pages/libary/tabs_screen/playlist_tab.dart';
-import 'package:bebop_music/pages/libary/tabs_screen/songes_tab.dart';
+import 'package:bebop_music/pages/my_music/tabs_screen/albums_tab.dart';
+import 'package:bebop_music/pages/my_music/tabs_screen/artists_tab.dart';
+import 'package:bebop_music/pages/my_music/tabs_screen/folder_tab.dart';
+import 'package:bebop_music/pages/my_music/tabs_screen/playlist_tab.dart';
+import 'package:bebop_music/pages/my_music/tabs_screen/songes_tab.dart';
 import 'package:bebop_music/share_widgets/play_btn.dart';
 import 'package:bebop_music/share_widgets/search_appbar.dart';
 import 'package:bebop_music/utils/app_colors.dart';
@@ -8,14 +10,14 @@ import 'package:bebop_music/utils/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LibraryScreen extends StatefulWidget {
-  const LibraryScreen({super.key});
+class MyMusicScreen extends StatefulWidget {
+  const MyMusicScreen({super.key});
 
   @override
-  State<LibraryScreen> createState() => _LibraryScreenState();
+  State<MyMusicScreen> createState() => _MyMusicScreenState();
 }
 
-class _LibraryScreenState extends State<LibraryScreen>
+class _MyMusicScreenState extends State<MyMusicScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -58,12 +60,12 @@ class _LibraryScreenState extends State<LibraryScreen>
           Expanded(
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 40.h, horizontal: 30.w),
-              child: TabBarView(controller: _tabController, children: [
+              child: TabBarView(controller: _tabController, children: const [
                 SongsTab(),
                 MyPlaylistTab(),
                 FolderTab(),
-                Center(child: Icon(Icons.music_note)),
-                Center(child: Icon(Icons.file_download)),
+                ArtistsTab(),
+                AlbumsTab()
               ]),
             ),
           )
