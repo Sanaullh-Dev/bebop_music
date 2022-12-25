@@ -11,12 +11,11 @@ TextStyle heading1 = TextStyle(
 TextStyle heading1Bold = heading1.copyWith(fontWeight: FontWeight.w700);
 
 TextStyle heading2 = TextStyle(
-  color: textColor,
-  fontWeight: FontWeight.w500,
-  fontSize: 48.sp,
-  fontFamily: "OpenSans",
-  letterSpacing: 1.1
-);
+    color: textColor,
+    fontWeight: FontWeight.w500,
+    fontSize: 48.sp,
+    fontFamily: "OpenSans",
+    letterSpacing: 1.1);
 
 TextStyle heading2Bold = heading2.copyWith(fontWeight: FontWeight.w700);
 
@@ -28,10 +27,13 @@ TextStyle heading3 = TextStyle(
 
 TextStyle heading3Bold = heading3.copyWith(fontWeight: FontWeight.w700);
 
-TextStyle menuText = TextStyle(
-    fontSize: 44.sp,
+TextStyle appBarText = TextStyle(
+    fontSize: 45.sp,
     fontWeight: FontWeight.w600,
     fontFamily: "Sen");
+
+TextStyle menuText =
+    TextStyle(fontSize: 44.sp, fontWeight: FontWeight.w600, fontFamily: "Sen");
 
 TextStyle menuTextSelected = menuText.copyWith(fontWeight: FontWeight.w700);
 
