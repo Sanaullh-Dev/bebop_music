@@ -13,7 +13,7 @@ TextStyle heading1Bold = heading1.copyWith(fontWeight: FontWeight.w700);
 TextStyle heading2 = TextStyle(
     color: textColor,
     fontWeight: FontWeight.w500,
-    fontSize: 48.sp,
+    fontSize: 55.sp,
     fontFamily: "OpenSans",
     letterSpacing: 1.1);
 

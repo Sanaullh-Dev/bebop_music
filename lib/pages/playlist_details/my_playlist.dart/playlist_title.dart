@@ -15,12 +15,10 @@ class TitlePlaylist extends StatelessWidget {
     double _pixelsPosition = 30;
     double opacityVal = 1;
 
-    if (animateValue < 30 && animateValue > 10) {
-      _pixelsPosition = 20;
-    } else if (animateValue < 10) {
-      _pixelsPosition = _pixelsPosition + animateValue * 0.9;
+    if (animateValue < 90 && animateValue >= 0) {
+      _pixelsPosition = _pixelsPosition + animateValue * 0.3;
     } else {
-      _pixelsPosition = 30;
+      _pixelsPosition = _pixelsPosition + 27;
     }
 
     opacityVal = animateValue == 0
@@ -31,7 +29,7 @@ class TitlePlaylist extends StatelessWidget {
       duration: const Duration(milliseconds: 500),
       opacity: opacityVal,
       child: SizedBox(
-        height: size.width * 0.8,
+        height: size.width * 0.65,
         width: double.infinity,
         child: Stack(
           children: [
@@ -51,15 +49,14 @@ class TitlePlaylist extends StatelessWidget {
                   // color: Colors.black45
                 ),
                 width: double.infinity,
-                height: size.width * 0.8,
+                height: size.width * 0.65,
                 child: Image.asset("assets/images/album_default.jpg",
                     fit: BoxFit.cover),
               ),
             ),
             Align(
               alignment: Alignment.bottomLeft,
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 300),
+              child: Container(
                 padding: EdgeInsets.symmetric(horizontal: _pixelsPosition),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,8 +69,8 @@ class TitlePlaylist extends StatelessWidget {
                             heading3.copyWith(color: textColor.withAlpha(150))),
                     TextButton.icon(
                         onPressed: () {},
-                        icon:
-                            Icon(FontAwesomeIcons.headphones, color: textColor, size: 40.sp),
+                        icon: Icon(FontAwesomeIcons.headphones,
+                            color: textColor, size: 40.sp),
                         label: Text(" 10",
                             style: heading3.copyWith(color: textLightColor))),
                     verticalMainSpace(),

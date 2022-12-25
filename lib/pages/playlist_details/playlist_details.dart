@@ -1,4 +1,4 @@
-import 'package:bebop_music/pages/playlist_details/widgets/playlist_title.dart';
+import 'package:bebop_music/pages/playlist_details/my_playlist.dart/playlist_title.dart';
 import 'package:bebop_music/share_widgets/songTile.dart';
 import 'package:bebop_music/utils/app_colors.dart';
 import 'package:bebop_music/utils/app_themes.dart';
@@ -24,7 +24,6 @@ class _PlaylistDetailsState extends State<PlaylistDetails> {
     _scrollCont.addListener(() {
       if (_scrollCont.position.pixels <= 180 &&
           _scrollCont.position.pixels >= 0) {
-        // print(_scrollCont.position.pixels);
         setState(() {
           pixelsPosition = _scrollCont.position.pixels.roundToDouble();
           opacityVal =
@@ -37,7 +36,7 @@ class _PlaylistDetailsState extends State<PlaylistDetails> {
 
   @override
   Widget build(BuildContext context) {
-    print(opacityVal);
+    // print(opacityVal);
     final size = MediaQuery.of(context).size;
     return Scaffold(
       extendBodyBehindAppBar: true,
