@@ -10,38 +10,37 @@ class PlayAllBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var btnSize = 75.sp;
-    return Row(
-      children: [
-        Container(
-          width: btnSize,
-          height: btnSize,
-          padding: EdgeInsets.only(left: 5.sp),
-          decoration: BoxDecoration(
-              color: popPrimaryColor, borderRadius: BorderRadius.circular(50)),
-          child: Icon(FontAwesomeIcons.play,
-              color: textColor, size: btnSize * 0.5),
-        ),
-        horizontalSubSpace(),
-        Text(
-          "Play all",
-          style: heading2Bold,
-        ),
-        Text(
-          " (210)",
-          style: heading3.copyWith(color: textLightColor),
-        ),
-        const Spacer(),
-        customIconBtn(onPress: () {}, icon: FontAwesomeIcons.shuffle),
-        horizontalSubSpace(),
-        IconButton(
-            onPressed: () {},
-            icon: SizedBox(
-                width: 70.sp,
-                height: 70.sp,
-                child: Image.asset("assets/icons/sort_icon.png"))),
-        horizontalSubSpace(),
-        customIconBtn(onPress: () {}, icon: FontAwesomeIcons.listCheck),
-      ],
+    return Padding(
+      padding: EdgeInsets.only(left: 40.sp, right: 40.sp, top: 20.sp),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: btnSize,
+            height: btnSize,
+            padding: EdgeInsets.only(left: 5.sp),
+            decoration: BoxDecoration(
+                color: popPrimaryColor,
+                borderRadius: BorderRadius.circular(50)),
+            child: Icon(FontAwesomeIcons.play,
+                color: textColor, size: btnSize * 0.5),
+          ),
+          horizontalSubSpace(),
+          Text("Play all", style: heading4Bold),
+          Text(" (210)", style: heading3.copyWith(color: textLightColor)),
+          const Spacer(),
+          customIconBtn(onPress: () {}, icon: FontAwesomeIcons.shuffle),
+          horizontalSubSpace(),
+          IconButton(
+              onPressed: () {},
+              icon: SizedBox(
+                  width: 70.sp,
+                  height: 70.sp,
+                  child: Image.asset("assets/icons/sort_icon.png"))),
+          horizontalSubSpace(),
+          customIconBtn(onPress: () {}, icon: FontAwesomeIcons.listCheck),
+        ],
+      ),
     );
   }
 

@@ -20,12 +20,12 @@ class ListTitleBar extends StatelessWidget {
     return InkWell(
       onTap: onPress,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
+        padding: EdgeInsets.symmetric(vertical: 20.sp, horizontal: 20.sp),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(titleName, style: heading2Bold),
+            Text(titleName, style: heading3Bold),
             moreBtn
                 ? Icon(icon, size: 50.sp, color: textColor)
                 : const SizedBox()
@@ -50,7 +50,7 @@ class ListTitleBarWithWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(titleName, style: heading2Bold),
+          Text(titleName, style: heading3Bold),
           const Spacer(),
           trailing
         ],

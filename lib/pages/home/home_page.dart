@@ -1,5 +1,5 @@
 import 'package:bebop_music/share_widgets/list_title_bar.dart';
-import 'package:bebop_music/share_widgets/playlist_card.dart';
+import 'package:bebop_music/share_widgets/playlist_card/playlist_card_min.dart';
 import 'package:bebop_music/share_widgets/search_appbar.dart';
 import 'package:bebop_music/share_widgets/songTile.dart';
 import 'package:bebop_music/utils/app_colors.dart';

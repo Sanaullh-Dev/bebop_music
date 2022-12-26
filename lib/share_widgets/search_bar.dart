@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SearchBar extends StatelessWidget {
-  const SearchBar({super.key});
+class SearchBox extends StatelessWidget {
+  const SearchBox({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +15,11 @@ class SearchBar extends StatelessWidget {
       width: size.width * 0.9,
       decoration: BoxDecoration(
           color: secondaryLightColor,
-          borderRadius: BorderRadius.circular(60.r)),
-      // height: 20,
+          borderRadius: BorderRadius.circular(100.r)),
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 30.h),
+        padding: EdgeInsets.symmetric(vertical: 35.sp),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             horizontalMainSpace(),
             Icon(FontAwesomeIcons.magnifyingGlass,
@@ -27,10 +27,10 @@ class SearchBar extends StatelessWidget {
             SizedBox(width: 25.w),
             SizedBox(
               width: size.width * 0.6,
+              // height: 60.sp,
               child: Text("Search Songs and Album adasd dsasdasd ",
-                  style: heading2.copyWith(
+                  style: heading3.copyWith(
                       color: textLightColor,
-                      height: 1,
                       overflow: TextOverflow.ellipsis)),
             ),
             

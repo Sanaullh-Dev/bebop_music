@@ -14,12 +14,12 @@ PreferredSizeWidget searchAppBar() => PreferredSize(
         elevation: 0,
         shadowColor: backgroundLightColor,
         leading: Padding(
-          padding: EdgeInsets.only(left: 40.w),
+          padding: EdgeInsets.only(left: 40.sp),
           child: Icon(FontAwesomeIcons.barsStaggered,
               size: 65.sp, color: textColor),
         ),
         leadingWidth: 150.w,
-        title: const SearchBar(),
-        actions: [SizedBox(width: 80.w)],
+        title: const SearchBox(),
+        actions: [SizedBox(width: 80.sp)],
       ),
     );

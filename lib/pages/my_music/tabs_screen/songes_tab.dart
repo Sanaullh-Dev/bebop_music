@@ -10,11 +10,13 @@ class SongsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const PlayAllBar(),
         Expanded(
           child: ListView.builder(
             itemCount: 10,
+            padding: EdgeInsets.symmetric(vertical: 10.sp, horizontal: 40.sp),
             itemBuilder: (BuildContext context, int index) {
               return SongTile(
                 icon: Icons.music_note,

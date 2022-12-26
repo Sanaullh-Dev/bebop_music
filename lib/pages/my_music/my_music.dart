@@ -37,8 +37,8 @@ class _MyMusicState extends State<MyMusic> with SingleTickerProviderStateMixin {
             alignment: Alignment.centerLeft,
             child: TabBar(
                 isScrollable: true,
-                unselectedLabelStyle: heading2,
-                labelStyle: heading1Bold,
+                unselectedLabelStyle: heading3,
+                labelStyle: heading3Bold,
                 indicatorColor: primaryColor,
                 padding: EdgeInsets.symmetric(horizontal: 50.w),
                 indicator: UnderlineTabIndicator(
@@ -56,20 +56,16 @@ class _MyMusicState extends State<MyMusic> with SingleTickerProviderStateMixin {
                 ]),
           ),
           Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 40.h, horizontal: 30.w),
-              child: TabBarView(controller: _tabController, children: const [
-                SongsTab(),
-                MyPlaylistTab(),
-                FolderTab(),
-                ArtistsTab(),
-                AlbumsTab()
-              ]),
-            ),
+            child: TabBarView(controller: _tabController, children: const [
+              SongsTab(),
+              MyPlayListTab(),
+              FolderTab(),
+              ArtistsTab(),
+              AlbumsTab()
+            ]),
           )
         ],
       ),
     );
-    // return
   }
 }

@@ -13,8 +13,8 @@ TextStyle heading1Bold = heading1.copyWith(fontWeight: FontWeight.w700);
 TextStyle heading2 = TextStyle(
     color: textColor,
     fontWeight: FontWeight.w500,
-    fontSize: 55.sp,
-    fontFamily: "OpenSans",
+    fontSize: 65.sp,
+    fontFamily: "Sen",
     letterSpacing: 1.1);
 
 TextStyle heading2Bold = heading2.copyWith(fontWeight: FontWeight.w700);
@@ -22,10 +22,14 @@ TextStyle heading2Bold = heading2.copyWith(fontWeight: FontWeight.w700);
 TextStyle heading3 = TextStyle(
     color: textColor,
     fontWeight: FontWeight.w500,
-    fontSize: 40.sp,
+    fontSize: 50.sp,
     fontFamily: "OpenSans");
 
 TextStyle heading3Bold = heading3.copyWith(fontWeight: FontWeight.w700);
+
+TextStyle heading4 =  heading3.copyWith(fontSize: 42);
+TextStyle heading4Bold =  heading3.copyWith(fontWeight: FontWeight.w700);
+
 
 TextStyle appBarText = TextStyle(
     fontSize: 45.sp,
