@@ -9,7 +9,7 @@ class PlayAllBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var btnSize = 80.sp;
+    var btnSize = 75.sp;
     return Row(
       children: [
         Container(

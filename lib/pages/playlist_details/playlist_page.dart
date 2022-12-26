@@ -1,18 +1,18 @@
-import 'package:bebop_music/pages/playlist_details/my_playlist.dart/playlist_title.dart';
+import 'package:bebop_music/pages/playlist_details/share_widget/playlist_title.dart';
 import 'package:bebop_music/share_widgets/songTile.dart';
 import 'package:bebop_music/utils/app_colors.dart';
 import 'package:bebop_music/utils/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PlaylistDetails extends StatefulWidget {
-  const PlaylistDetails({super.key});
+class PlaylistPage extends StatefulWidget {
+  const PlaylistPage({super.key});
 
   @override
-  State<PlaylistDetails> createState() => _PlaylistDetailsState();
+  State<PlaylistPage> createState() => _PlaylistPageState();
 }
 
-class _PlaylistDetailsState extends State<PlaylistDetails> {
+class _PlaylistPageState extends State<PlaylistPage> {
   static const double _appBarBottomBtnPosition = 24.0;
   final _scrollCont = ScrollController();
   double pixelsPosition = 1;

@@ -9,6 +9,8 @@ class ArtistsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.width * 0.45;
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -24,12 +26,13 @@ class ArtistsTab extends StatelessWidget {
             ),
           ),
           AlignedGridView.count(
-            primary: false,
+              primary: false,
               shrinkWrap: true,
               crossAxisCount: 2,
               itemCount: 15,
               itemBuilder: (BuildContext context, int index) {
-                return const PlaylistCardMax(
+                return PlaylistCardMax(
+                  cardSize: size,
                   titleName: "Artists Name with full details",
                   subTitleName: "",
                   cardDesc: "Play list name",

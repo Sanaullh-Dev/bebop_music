@@ -65,23 +65,23 @@ class PlaylistCardMax extends StatelessWidget {
   final String titleName;
   final String subTitleName;
   final String cardDesc;
+  final double cardSize;
   const PlaylistCardMax(
       {super.key,
       required this.titleName,
       required this.subTitleName,
-      required this.cardDesc});
+      required this.cardDesc,
+      required this.cardSize});
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size.width * 0.45;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: size,
-          height: size,
-          margin: EdgeInsets.symmetric(vertical: 20.w, horizontal: 20.w),
+          width: cardSize,
+          height: cardSize,
+          margin: EdgeInsets.symmetric(vertical: 20.sp, horizontal: 20.sp),
           decoration: BoxDecoration(
               color: primaryLightColor,
               borderRadius: BorderRadius.circular(40.r)),
@@ -99,54 +99,57 @@ class PlaylistCardMax extends StatelessWidget {
                             color: textColor, size: 70.sp)),
                   ),
                 ),
-                SizedBox(
-                  width: size,
-                  height: size,
-                  // child: Image.asset('assets/images/default_img.jpg',
-                  child: Image.asset('assets/images/album.jpg',
-                      fit: BoxFit.fitHeight),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    height: size * 0.3,
-                    decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                          Colors.transparent,
-                          Colors.black87,
-                        ])),
-                    padding:
-                        EdgeInsets.symmetric(vertical: 5.sp, horizontal: 30.sp),
-                    child: SizedBox(
-                      width: size * 0.9,
-                      child: Row(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(
-                            width: size * 0.6,
-                            child: Text(cardDesc,
-                                // "play list name",
-                                maxLines: 2,
-                                style: heading2.copyWith(
-                                    fontSize: 40.sp,
-                                    overflow: TextOverflow.ellipsis,
-                                    height: 1.2,
-                                    color: textColor,
-                                    fontWeight: FontWeight.w600)),
+                // SizedBox(
+                //   width: cardSize,
+                //   height: cardSize,
+                //   // child: Image.asset('assets/images/default_img.jpg',
+                //   child: Image.asset('assets/images/album.jpg',
+                //       fit: BoxFit.fitHeight),
+                // ),
+                cardDesc.isEmpty
+                    ? const SizedBox()
+                    : Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          height: cardSize * 0.3,
+                          decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                Colors.transparent,
+                                Colors.black87,
+                              ])),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 5.sp, horizontal: 30.sp),
+                          child: SizedBox(
+                            width: cardSize * 0.9,
+                            child: Row(
+                              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  width: cardSize * 0.6,
+                                  child: Text(cardDesc,
+                                      // "play list name",
+                                      maxLines: 2,
+                                      style: heading2.copyWith(
+                                          fontSize: 40.sp,
+                                          overflow: TextOverflow.ellipsis,
+                                          height: 1.2,
+                                          color: textColor,
+                                          fontWeight: FontWeight.w600)),
+                                ),
+                                const Spacer(),
+                                PlayButton(
+                                    bgColor: textColor,
+                                    onPress: () {},
+                                    btnSize: 80.sp),
+                              ],
+                            ),
                           ),
-                          const Spacer(),
-                          PlayButton(
-                              bgColor: textColor,
-                              onPress: () {},
-                              btnSize: 80.sp),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                        ),
+                      )
+                    
               ],
             ),
           ),

@@ -10,6 +10,8 @@ class AlbumsTab extends StatelessWidget {
   @override
   // Library
   Widget build(BuildContext context) {
+     final size = MediaQuery.of(context).size.width * 0.45;
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -30,7 +32,8 @@ class AlbumsTab extends StatelessWidget {
               crossAxisCount: 2,
               itemCount: 15,
               itemBuilder: (BuildContext context, int index) {
-                return const PlaylistCardMax(
+                return PlaylistCardMax(
+                  cardSize: size,
                     titleName: "Folder Name",
                     subTitleName: "Album Name",
                     cardDesc: "29 Songs");
