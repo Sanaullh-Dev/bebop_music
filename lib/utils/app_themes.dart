@@ -27,14 +27,11 @@ TextStyle heading3 = TextStyle(
 
 TextStyle heading3Bold = heading3.copyWith(fontWeight: FontWeight.w700);
 
-TextStyle heading4 =  heading3.copyWith(fontSize: 42);
-TextStyle heading4Bold =  heading3.copyWith(fontWeight: FontWeight.w700);
+TextStyle heading4 = heading3.copyWith(fontSize: 40.sp);
+TextStyle heading4Bold = heading4.copyWith(fontWeight: FontWeight.w700);
 
-
-TextStyle appBarText = TextStyle(
-    fontSize: 45.sp,
-    fontWeight: FontWeight.w600,
-    fontFamily: "Sen");
+TextStyle appBarText =
+    TextStyle(fontSize: 45.sp, fontWeight: FontWeight.w600, fontFamily: "Sen");
 
 TextStyle menuText =
     TextStyle(fontSize: 44.sp, fontWeight: FontWeight.w600, fontFamily: "Sen");
@@ -58,10 +55,16 @@ TextStyle tileSubTitle = TextStyle(
 
 TextStyle tileSubTitleBold = tileSubTitle.copyWith(fontWeight: FontWeight.w700);
 
-TextStyle body =
-    TextStyle(color: textColor, fontSize: 18.sp, fontFamily: "OpenSans");
+TextStyle bodyTextStyle =
+    TextStyle(color: textColor, fontSize: 30.sp, fontFamily: "OpenSans");
 
-TextStyle bodyStrong = body.copyWith(fontWeight: FontWeight.w700);
+TextStyle bodyTextStyleBold = bodyTextStyle.copyWith(fontWeight: FontWeight.w700);
+
+TextStyle textFiledStyle = TextStyle(
+    fontSize: 50.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: "Sen",
+    color: textColor);
 
 Widget verticalMainSpace() => SizedBox(height: 35.h);
 Widget verticalSubSpace() => SizedBox(height: 15.h);

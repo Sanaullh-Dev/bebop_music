@@ -1,5 +1,7 @@
 import 'package:bebop_music/pages/home/home_page.dart';
+import 'package:bebop_music/pages/mine_page/mine_page.dart';
 import 'package:bebop_music/pages/my_music/my_music.dart';
+import 'package:bebop_music/pages/videos_page/videos_page.dart';
 import 'package:bebop_music/utils/app_colors.dart';
 import 'package:bebop_music/utils/app_themes.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +17,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int pageIndex = 0;
-  final pagesList = const [HomePage(), MyMusic(), HomePage(), MyMusic()];
+  final pagesList = const [HomePage(), MyMusic(), VideosPage(), MinePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
             iconItem(label: "Home", icon: FontAwesomeIcons.house),
             iconItem(label: "My Music", icon: FontAwesomeIcons.music),
             iconItem(label: "Video", icon: FontAwesomeIcons.film),
-            iconItem(label: "Setting", icon: FontAwesomeIcons.user),
+            iconItem(label: "Mine", icon: FontAwesomeIcons.user),
           ]),
     );
   }

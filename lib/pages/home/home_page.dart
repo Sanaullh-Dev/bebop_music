@@ -1,3 +1,4 @@
+import 'package:bebop_music/pages/search_page/search_page.dart';
 import 'package:bebop_music/share_widgets/list_title_bar.dart';
 import 'package:bebop_music/share_widgets/playlist_card/playlist_card_min.dart';
 import 'package:bebop_music/share_widgets/search_appbar.dart';
@@ -20,7 +21,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: searchAppBar(),
+      appBar: searchAppBar(
+        isSearchPage: false,
+        buildContext: context,
+        onPress: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const SearchPage())),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 20.w),
@@ -88,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                 itemCount: 3,
                 itemBuilder: (BuildContext context, int index) {
                   return const SongTile(
-                    icon: FontAwesomeIcons.music,
+                      icon: FontAwesomeIcons.music,
                       title: "Doobey",
                       subTitle: "Album Name - Artists",
                       trailingWidget: SizedBox());
@@ -120,6 +126,6 @@ Widget actionButton(
           padding: const EdgeInsets.only(right: 8),
           child: Icon(btnIcon, color: iconColor, size: 80.sp),
         ),
-        label: Text(name, style: heading2Bold),
+        label: Text(name, style: heading3Bold),
       ),
     );
