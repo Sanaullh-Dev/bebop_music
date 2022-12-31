@@ -1,4 +1,6 @@
 import 'dart:ui';
+import 'package:bebop_music/share_widgets/play_btn.dart';
+import 'package:bebop_music/share_widgets/play_button.dart';
 import 'package:bebop_music/utils/app_colors.dart';
 import 'package:bebop_music/utils/app_themes.dart';
 import 'package:flutter/material.dart';
@@ -21,12 +23,12 @@ class _PlayingPanelState extends State<PlayingPanel> {
     final size = MediaQuery.of(context).size;
 
     return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
+      filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
       child: Container(
         margin: EdgeInsets.only(top: 30.sp),
         width: size.width,
         decoration: BoxDecoration(
-            color: Colors.grey.shade200.withOpacity(0.3),
+            color: Colors.grey.shade600.withOpacity(0.3),
             borderRadius: BorderRadius.vertical(top: Radius.circular(90.sp))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,8 +39,7 @@ class _PlayingPanelState extends State<PlayingPanel> {
                 decoration: BoxDecoration(
                     color: Colors.grey.shade200.withOpacity(0.9),
                     borderRadius:
-                        BorderRadius.vertical(bottom: Radius.circular(165.sp))
-                        ),
+                        BorderRadius.vertical(bottom: Radius.circular(165.sp))),
                 padding: EdgeInsets.symmetric(vertical: 15.sp, horizontal: 0),
                 width: 200.sp,
                 child: Icon(FontAwesomeIcons.chevronDown,
@@ -118,27 +119,22 @@ class _PlayingPanelState extends State<PlayingPanel> {
                         FontAwesomeIcons.repeat,
                         color: textColor,
                       )),
-                  playingBtn(
+                  PlayBigButton(
                       onPress: () {},
                       icon: FontAwesomeIcons.backwardStep,
-                      size: 30.sp,
-                      color: textColor),
-                  playingBtn(
+                      size: 50.sp,
+                      iconColor: textColor),
+                  PlayBigButton(
                       onPress: () {},
                       icon: FontAwesomeIcons.play,
-                      size: 70.sp,
-                      color: textColor,
+                      size: 80.sp,
+                      iconColor: textColor,
                       bgColor: primaryColor),
-                  playingBtn(
+                  PlayBigButton(
                       onPress: () {},
                       icon: FontAwesomeIcons.forwardStep,
-                      size: 30.sp,
-                      color: textColor),
-                  // SizedBox(
-                  //   width: 90.sp,
-                  //   height: 90.sp,
-                  //   child: Image.asset('assets/icons/playlist.png'),
-                  // )
+                      size: 50.sp,
+                      iconColor: textColor),
                   IconButton(
                       onPressed: () {},
                       icon: Icon(
@@ -148,48 +144,10 @@ class _PlayingPanelState extends State<PlayingPanel> {
                 ],
               ),
             ),
-            // const Spacer(),
-            // Container(
-            //   color: secondaryLightColor,
-            //   height: 220.sp,
-            //   padding: EdgeInsets.symmetric(vertical: 15.sp, horizontal: 25.sp),
-            //   child: Column(
-            //     children: [
-            //       Center( child: Icon(FontAwesomeIcons.chevronUp, color: textColor,)),
-            //       Row(
-            //         children: [
-            //           Text("data")
-            //         ],
-
-            //       ),
-            //     ],
-            //   ),
             // )
           ],
         ),
       ),
     );
-  }
-
-  Widget playingBtn(
-      {required VoidCallback onPress,
-      required IconData icon,
-      required double size,
-      Color? bgColor,
-      required Color color}) {
-    return TextButton(
-        style: TextButton.styleFrom(
-            backgroundColor: bgColor ?? Colors.transparent,
-            padding: EdgeInsets.symmetric(vertical: size),
-            side: BorderSide(color: primaryColor, width: 5.sp),
-            shape: const CircleBorder(),
-            alignment: Alignment.topCenter),
-        onPressed: onPress,
-        child: Padding(
-          padding: bgColor == primaryColor
-              ? const EdgeInsets.only(left: 5)
-              : EdgeInsets.zero,
-          child: Icon(icon, color: color, size: 70.sp),
-        ));
   }
 }

@@ -65,7 +65,7 @@ Widget searchTextFiled() => TextField(
         hintText: "Search",
         hintStyle: textFiledStyle.copyWith(color: textLightColor),
         suffixIcon: Icon(Icons.close, color: textColor, size: 65.sp),
-        contentPadding: EdgeInsets.symmetric(vertical: 10.sp),
+        contentPadding: EdgeInsets.symmetric(vertical: 25.sp),
         border: borderStyle(),
         focusedBorder: borderStyle(),
         enabledBorder: borderStyle(),
