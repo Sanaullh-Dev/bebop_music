@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
           textSelectionTheme: TextSelectionThemeData(
               cursorColor: primaryColor, selectionColor: textColor),
         ),
-        // home: const SafeArea(child: MainScreen()),
-        home: const SafeArea(child: PlayingPage()),
+        home: const SafeArea(child: MainScreen()),
+        // home: const SafeArea(child: PlayingPage()),
       ),
     );
   }
