@@ -63,9 +63,7 @@ class PlaySmallButton extends StatelessWidget {
             alignment: Alignment.topCenter),
         onPressed: onPress,
         child: Padding(
-          padding: icon == FontAwesomeIcons.play
-              ? EdgeInsets.only(left: 10.sp)
-              : EdgeInsets.zero,
+          padding: EdgeInsets.only(left: 15.sp),
           child: Icon(icon, color: iconColor, size: 70.sp),
         ));
   }
