@@ -8,6 +8,7 @@ import 'package:bebop_music/utils/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:on_audio_query/on_audio_query.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,6 +18,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final OnAudioQuery _audioQuery = OnAudioQuery();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,16 +59,33 @@ class _HomePageState extends State<HomePage> {
                 onPress: () {},
                 moreBtn: true,
               ),
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 4,
-                itemBuilder: (BuildContext context, int index) {
-                  return const SongTile(
-                      icon: FontAwesomeIcons.music,
-                      title: "Doobey",
-                      subTitle: "Album Name - Artists",
-                      trailingWidget: SizedBox());
+              FutureBuilder(
+                future: _audioQuery.querySongs(
+                    sortType: null,
+                    orderType: OrderType.ASC_OR_SMALLER,
+                    uriType: UriType.EXTERNAL,
+                    ignoreCase: true),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.data == null) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasData) {
+                    return ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return const SongTile(
+                            icon: FontAwesomeIcons.music,
+                            title: "Doobey",
+                            subTitle: "Album Name - Artists",
+                            trailingWidget: SizedBox());
+                      },
+                    );
+                  } else {
+                    return Center(
+                      child: Text("Noting Found!"),
+                    );
+                  }
                 },
               ),
               verticalMainSpace(),

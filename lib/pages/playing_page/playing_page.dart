@@ -23,7 +23,7 @@ class _PlayingPanelState extends State<PlayingPanel> {
     final size = MediaQuery.of(context).size;
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(150.r),
+      borderRadius: BorderRadius.circular(50.r),
       child: Container(
         color: Colors.white12,      
         child: BackdropFilter(
