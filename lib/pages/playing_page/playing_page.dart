@@ -30,8 +30,9 @@ class _PlayingPanelState extends State<PlayingPanel> {
           filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 20.0),
           child: Container(
             margin: EdgeInsets.only(top: 30.sp),
+            padding: EdgeInsets.only(bottom: 10.sp),
             width: size.width,
-                
+            height: size.height,                
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -50,6 +51,7 @@ class _PlayingPanelState extends State<PlayingPanel> {
                       )),
                 ),
                 SizedBox(height: 80.sp),
+                const Spacer(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 100.sp),
                   child: Row(
@@ -135,7 +137,7 @@ class _PlayingPanelState extends State<PlayingPanel> {
                     ],
                   ),
                 ),
-                // )
+                const Spacer(),
               ],
             ),
           ),

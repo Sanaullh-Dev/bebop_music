@@ -13,8 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class MainScreen extends StatefulWidget {
@@ -45,11 +43,19 @@ class _MainScreenState extends State<MainScreen> {
   getSongs() async {
     await requestPermission();
     songsList = await _audioQuery.querySongs(
-      sortType: null,
+      sortType: SongSortType.ALBUM,
       orderType: OrderType.ASC_OR_SMALLER,
       uriType: UriType.EXTERNAL,
       ignoreCase: true,
-    );    
+    );
+
+    var alb = await _audioQuery.queryAlbums(
+        ignoreCase: true, sortType: null, orderType: OrderType.ASC_OR_SMALLER);
+
+    var artists = await _audioQuery.queryArtists();
+    var genres = await _audioQuery.queryGenres();
+    
+
   }
 
   requestPermission() async {
@@ -71,7 +77,7 @@ class _MainScreenState extends State<MainScreen> {
             alignment: Alignment.topCenter,
             child: SlidingUpPanel(
               controller: _panel_controller,
-              maxHeight: _size.height - 330.sp,
+              maxHeight: _size.height,
               minHeight: 450.sp,
               color: Colors.transparent,
               onPanelSlide: (position) {
@@ -161,7 +167,7 @@ class _MainScreenState extends State<MainScreen> {
             duration: const Duration(),
             child: ClipRRect(
               child: Container(
-                height: 100,
+                height: 240.sp,
                 width: double.infinity,
                 color: Colors.white24,
                 child: BackdropFilter(
